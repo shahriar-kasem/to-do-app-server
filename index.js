@@ -17,6 +17,12 @@ async function run(){
 
         const toDoCollection = client.db('toDoList').collection('notes');
 
+        // post
+        app.post('/add', async(req,res) => {
+            const add = req.body;
+            const result = await toDoCollection.insertOne(add);
+            res.send(result);
+        })
         console.log('Database connected')
     }
     finally{
