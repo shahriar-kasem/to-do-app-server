@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const { application } = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -21,6 +22,13 @@ async function run(){
         app.post('/add', async(req,res) => {
             const add = req.body;
             const result = await toDoCollection.insertOne(add);
+            res.send(result);
+        })
+
+        // get
+        app.get('/notes', async(req,res) => {
+            const query = {};
+            const result = await toDoCollection.find(query).toArray();
             res.send(result);
         })
         console.log('Database connected')
