@@ -28,8 +28,13 @@ async function run(){
         // get
         app.get('/notes', async(req,res) => {
             const query = {};
-            const result = await toDoCollection.find(query).toArray();
+            const result = await toDoCollection.find(query).sort({ _id: -1 }).toArray();
             res.send(result);
+        })
+
+        // delete
+        app.delete('/note', async(req,res)=>{
+            
         })
         console.log('Database connected')
     }
