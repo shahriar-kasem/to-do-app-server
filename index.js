@@ -38,21 +38,22 @@ async function run() {
         app.patch('/update', async(req,res) => {
             const data = req.body;
             const id = data.id;
-            const complete = data.complete;
             const filter = {_id: ObjectId(id)}
             const updateDoc = {
                 $set: {
-                    complete: complete,
+                    complete: data.complete,
                 }
             }
-            console.log(updateDoc)
-            const result = toDoCollection.updateOne(filter, updateDoc)
+            const result = await toDoCollection.updateOne(filter, updateDoc)
             res.send(result);
         })
 
         // delete
-        app.delete('/note', async (req, res) => {
-
+        app.delete('/delete/note/:id', async (req, res) => {
+            const id = req.params.id;
+           const query = {_id: ObjectId(id)};
+           const result = await toDoCollection.deleteOne(query);
+           res.send(result)
         })
         console.log('Database connected')
     }
