@@ -20,7 +20,8 @@ async function run() {
 
         // get
         app.get('/notes', async (req, res) => {
-            const query = {};
+            const email = req.query.email;
+            const query = {email: email};
             const result = await toDoCollection.find(query).sort({ _id: -1 }).toArray();
             res.send(result);
         })
