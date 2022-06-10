@@ -1,4 +1,4 @@
-# Spadex Industry
+# To-Do App
 
 ## [Live site link](https://to-do-app-e0d61.web.app/)
 Click here: https://to-do-app-e0d61.web.app/
