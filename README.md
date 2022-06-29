@@ -4,8 +4,8 @@
 Click here: https://to-do-app-e0d61.web.app/
 
 ## [Repo link client-side](https://github.com/shahriar-kasem/to-do-app)
-Click here: https://github.com/shahriar-kasem/to-do-app
-## [Repo link server-side](https://github.com/shahriar-kasem/to-do-app-server)
+Click here: https://github.com/shahriarkasem/to-do-app
+## [Repo link server-side](https://github.com/shahriarkasem/to-do-app-server)
 Click here: https://github.com/shahriar-kasem/to-do-app-server
 
 ### App overview: 
